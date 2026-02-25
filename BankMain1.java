@@ -6,7 +6,7 @@ class Bank{
     
     public Bank(long accountNo, double balance){
         this.accountNo = accountNo;
-        this.balance = balance;
+        setBalance(balance);
     }
     public double getBalance(long accountNo){
         return balance;
@@ -23,10 +23,15 @@ class Bank{
          System.out.println(accountNo+ " your balance is " + balance );
     }
     public void  deposite(long accountNo, double amount){
-        System.out.println(amount + " is deposited in your account " + accountNo + " and your balance is " + balance + amount );
+        if (amount > 0) {
+            this.balance += amount; 
+            System.out.println("Deposited: " + amount);
+        } else {
+            System.out.println("Invalid deposit amount.");
+        }
     }
     public void withdraw(long accountNo, double amount){
-        System.out.println(amount + " is withdrawn from your account " + accountNo + " and your balance is "+ (balance - amount) );
+        System.out.println(amount + " is withdrawn from your account " + accountNo + " and your balance is "+ (balance -= amount) );
     }
 }
     

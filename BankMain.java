@@ -24,6 +24,7 @@ class BankMain {
     public static void main(String[] args) {
        Bank b1 = new Bank(101,1500000000.00);
        b1.display();
-        
+       b1.deposite(101, 20000000.00);
+       b1.withdraw(101, 300000.00);
     }
 }
